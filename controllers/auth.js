@@ -8,10 +8,9 @@ class AuthController {
          //  }
          //  return res.status(404).json({ message: "not found" });
          // check email
-         const { email } = req.body;
+         const { usename, email, password } = req.body;
          const emailExist = await User.findOne({ email });
          if (emailExist) {
-            console.log(emailExist);
             return res.status(400).json({ message: "Email Existed" });
          }
       } catch (error) {
