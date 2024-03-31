@@ -8,12 +8,12 @@ const registerValidate = Joi.object({
       //   "string.max": "username phải có ít hơn {#litmit} ký tự",
    }),
    email: Joi.string().email(),
-   password: Joi.string(),
+   password: Joi.string().min(1).max(10).required(),
    //    confirmPassword: Joi.string().required().valid(Joi.ref("password")),
-});
+}).with("password", "repeat_password");
 const loginValidate = Joi.object({
    email: Joi.string().required().email(),
-   password: Joi.string().required(),
+   password: Joi.string().required().min(1).max(10),
 });
 
 export { registerValidate, loginValidate };

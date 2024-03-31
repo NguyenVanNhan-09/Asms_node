@@ -8,3 +8,5 @@ AuthRouter.post("/register", authController.register);
 AuthRouter.post("/login", authController.login);
 
 export default AuthRouter;
+
+// base nodejs
