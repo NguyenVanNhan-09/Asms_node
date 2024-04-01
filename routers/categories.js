@@ -1,0 +1,10 @@
+import router from "express";
+import CategorieController from "../controllers/categories";
+const CategoryRouter = router();
+const categoriesController = new CategorieController();
+CategoryRouter.get("/", categoriesController.getAllCategorie);
+CategoryRouter.get("/:id", categoriesController.getlCategorieDetail);
+CategoryRouter.post("/", categoriesController.createCategorie);
+// CategoryRouter.put("/:id", categoriesController.updateCategorie);
+// CategoryRouter.delete("/:id", categoriesController.deleteCategorie);
+export default CategoryRouter;

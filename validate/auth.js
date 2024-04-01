@@ -9,8 +9,9 @@ const registerValidate = Joi.object({
    }),
    email: Joi.string().email(),
    password: Joi.string().min(1).max(10).required(),
+   role: Joi.string(),
    //    confirmPassword: Joi.string().required().valid(Joi.ref("password")),
-}).with("password", "repeat_password");
+});
 const loginValidate = Joi.object({
    email: Joi.string().required().email(),
    password: Joi.string().required().min(1).max(10),

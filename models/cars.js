@@ -7,8 +7,12 @@ const CarsSchema = new Schema(
       description: { type: String, required: true },
       year: { type: Number, required: true },
       active: { type: Boolean, default: true },
+      categories: {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "categories",
+      },
    },
    { timeseries: true, versionKey: false }
 );
-const Cars = mongoose.model("Cart", CarsSchema);
+const Cars = mongoose.model("cars", CarsSchema);
 export default Cars;

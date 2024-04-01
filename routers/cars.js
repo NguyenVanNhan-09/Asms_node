@@ -1,6 +1,6 @@
 import router from "express";
-import CarsController from "../controllers/cars.js";
-import { checkPermission } from "../permission/checkPermission.js";
+import CarsController from "../controllers/cars";
+import { checkPermission } from "../middlewares/checkPermission";
 const CarsRouter = router();
 const carsController = new CarsController();
 CarsRouter.get("/", carsController.getAllCars);
